@@ -169,10 +169,7 @@ const Convert = () => {
                   className="w-full rounded-lg shadow-glow"
                   poster="/placeholder-video.jpg"
                 >
-                  <source
-                    src="/result.mp4"
-                    type="video/mp4"
-                  />
+                  <source src="/result.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
