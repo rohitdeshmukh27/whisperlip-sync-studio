@@ -1,42 +1,36 @@
 import { Card } from "@/components/ui/card";
-import teamAlex from "@/assets/team-alex.jpg";
-import teamPriya from "@/assets/team-priya.jpg";
-import teamDavid from "@/assets/team-david.jpg";
-import teamSarah from "@/assets/team-sarah.jpg";
-import teamRaj from "@/assets/team-raj.jpg";
-import teamMaya from "@/assets/team-maya.jpg";
 
 const Team = () => {
   const teamMembers = [
     {
       name: "Dr. Sujit N Deshpande",
       role: "Mentor",
-      image: teamAlex,
+      image: "https://www.vupune.ac.in/images/Faculty/dr-sujit-deshpande.jpg",
     },
     {
       name: "Ananya Payas",
       role: "Team Member",
-      image: teamDavid,
+      image: "/ananya.jpeg",
     },
     {
       name: "Chaitanya Ambade",
       role: "Team Member",
-      image: teamSarah,
+      image: "/chaitanya.jpeg",
     },
     {
       name: "Lakxhit Chaurasia",
       role: "Team Member",
-      image: teamRaj,
+      image: "/lakxhit.jpeg",
     },
     {
       name: "Rohit Deshmukh",
       role: "Team Lead",
-      image: teamPriya,
+      image: "/rohit.jpg",
     },
     {
       name: "Ronit Jain",
       role: "Team Member",
-      image: teamMaya,
+      image: "/ronit.jpeg",
     },
   ];
 

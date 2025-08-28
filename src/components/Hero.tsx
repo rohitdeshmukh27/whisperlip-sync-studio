@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import BlurText from "@/components/ui/blur-text";
 import SplitText from "@/components/ui/split-text";
+import Particles from "@/components/ui/particles";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -10,8 +11,11 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-glow opacity-40" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      <Particles
+        className="absolute inset-0"
+        quantity={80}
+        color="#ffffff"
+      />
       
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <BlurText 

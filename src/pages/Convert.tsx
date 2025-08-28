@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ArrowLeft, Upload, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,9 +21,9 @@ const Convert = () => {
 
   const handleGenerate = () => {
     if (!audioFile || !videoFile || !selectedModel) return;
-    
+
     setIsLoading(true);
-    
+
     // Simulate processing time
     setTimeout(() => {
       setIsLoading(false);
@@ -28,7 +34,7 @@ const Convert = () => {
   const models = [
     "Wav2Lip ONNX HQ",
     "OpenTalker/SadTalker (GUI)",
-    "Wav2Lip - Rudrabha"
+    "Wav2Lip - Rudrabha",
   ];
 
   return (
@@ -37,11 +43,11 @@ const Convert = () => {
       <div className="absolute inset-0 bg-gradient-glow opacity-50" />
       <div className="absolute top-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      
+
       <div className="relative z-10 container mx-auto px-6 py-12">
         {/* Back button */}
-        <Button 
-          variant="ghost" 
+        <Button
+          variant="ghost"
           onClick={() => navigate("/")}
           className="mb-8 text-muted-foreground hover:text-foreground transition-smooth"
         >
@@ -55,7 +61,8 @@ const Convert = () => {
               Convert Your Media
             </h1>
             <p className="text-xl text-muted-foreground">
-              Upload your audio and video files, select a model, and let AI do the magic
+              Upload your audio and video files, select a model, and let AI do
+              the magic
             </p>
           </div>
 
@@ -110,7 +117,10 @@ const Convert = () => {
                     AI
                   </div>
                   <h3 className="text-xl font-semibold mb-4">Select Model</h3>
-                  <Select value={selectedModel} onValueChange={setSelectedModel}>
+                  <Select
+                    value={selectedModel}
+                    onValueChange={setSelectedModel}
+                  >
                     <SelectTrigger className="w-full bg-secondary border-border">
                       <SelectValue placeholder="Choose AI Model" />
                     </SelectTrigger>
@@ -130,16 +140,19 @@ const Convert = () => {
           {/* Loading State */}
           {isLoading && (
             <div className="text-center py-20">
-              <h2 className="text-3xl font-bold mb-8 text-primary">Processing Your Request...</h2>
+              <h2 className="text-3xl font-bold mb-8 text-primary">
+                Processing Your Request...
+              </h2>
               <div className="max-w-md mx-auto mb-8">
-                <img 
+                <img
                   src="https://cdn-fikdj.nitrocdn.com/BeQKQJEEMTzFulppeCBPmpmURlzfZAZR/assets/images/optimized/rev-b1a63b5/www.insideoutgroup.co.uk/wp-content/uploads/2018/02/Rackspace_Office_Time_Lapse.gif"
                   alt="Processing..."
                   className="w-full rounded-lg shadow-glow"
                 />
               </div>
               <p className="text-muted-foreground">
-                Our AI models are working their magic. This will take a few moments...
+                Our AI models are working their magic. This will take a few
+                moments...
               </p>
             </div>
           )}
@@ -147,14 +160,19 @@ const Convert = () => {
           {/* Result State */}
           {showResult && (
             <div className="text-center py-12">
-              <h2 className="text-3xl font-bold mb-8 text-primary">Your Result is Ready!</h2>
+              <h2 className="text-3xl font-bold mb-8 text-primary">
+                Your Result is Ready!
+              </h2>
               <div className="max-w-md mx-auto mb-8">
-                <video 
-                  controls 
+                <video
+                  controls
                   className="w-full rounded-lg shadow-glow"
                   poster="/placeholder-video.jpg"
                 >
-                  <source src="/result.mp4" type="video/mp4" />
+                  <source
+                    src="/result.mp4"
+                    type="video/mp4"
+                  />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -162,8 +180,8 @@ const Convert = () => {
                 <Button variant="hero" size="lg">
                   Download Result
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
                   onClick={() => {
                     setShowResult(false);

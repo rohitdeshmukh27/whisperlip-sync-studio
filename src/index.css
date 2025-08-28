@@ -119,3 +119,89 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom scrollbar styling to match the theme */
+@layer utilities {
+  /* Webkit scrollbar styles for modern browsers */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+    border-radius: var(--radius);
+    border: 1px solid hsl(var(--border));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary-glow)) 50%,
+      hsl(var(--primary-dark)) 100%
+    );
+    border-radius: var(--radius);
+    border: 2px solid hsl(var(--background));
+    box-shadow: 0 2px 8px hsl(var(--primary) / 0.3);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary-glow)) 0%,
+      hsl(var(--primary)) 50%,
+      hsl(var(--primary-glow)) 100%
+    );
+    box-shadow: 0 4px 16px hsl(var(--primary) / 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: hsl(var(--primary-dark));
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: hsl(var(--background));
+  }
+
+  /* Firefox scrollbar styles */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+  }
+
+  /* Custom thin scrollbar variant */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    border: 1px solid hsl(var(--background));
+  }
+
+  /* Custom scrollbar for specific containers */
+  .scrollbar-primary {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) transparent;
+  }
+
+  .scrollbar-primary::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-primary::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-primary::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.7);
+    border-radius: 4px;
+    border: none;
+  }
+
+  .scrollbar-primary::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
