@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import BlurText from "@/components/ui/blur-text";
+import SplitText from "@/components/ui/split-text";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -12,13 +14,19 @@ const Hero = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
       
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <h1 className="text-7xl md:text-8xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent leading-tight">
-          Welcome to WhisperLip
-        </h1>
+        <BlurText 
+          text="Welcome to WhisperLip"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
+          wordClassName="bg-gradient-primary bg-clip-text text-transparent"
+          baseDelay={0.1}
+          wordDelay={0.25}
+        />
         
-        <p className="text-2xl md:text-3xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-          A tool to convert lip-sync with Hindi audio using any model of your choice.
-        </p>
+        <SplitText 
+          text="A tool to convert lip-sync with Hindi audio using any model of your choice."
+          className="text-2xl md:text-3xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
+          delay={1.5}
+        />
         
         <Button
           variant="hero"

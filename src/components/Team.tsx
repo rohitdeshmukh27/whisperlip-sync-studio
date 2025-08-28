@@ -9,35 +9,35 @@ import teamMaya from "@/assets/team-maya.jpg";
 const Team = () => {
   const teamMembers = [
     {
-      name: "Alex Chen",
-      role: "Lead AI Engineer",
-      image: teamAlex
+      name: "Dr. Sujit N Deshpande",
+      role: "Mentor",
+      image: teamAlex,
     },
     {
-      name: "Priya Sharma",
-      role: "ML Research Scientist",
-      image: teamPriya
+      name: "Ananya Payas",
+      role: "Team Member",
+      image: teamDavid,
     },
     {
-      name: "David Kumar",
-      role: "Full Stack Developer",
-      image: teamDavid
+      name: "Chaitanya Ambade",
+      role: "Team Member",
+      image: teamSarah,
     },
     {
-      name: "Sarah Johnson",
-      role: "Product Designer",
-      image: teamSarah
+      name: "Lakxhit Chaurasia",
+      role: "Team Member",
+      image: teamRaj,
     },
     {
-      name: "Raj Patel",
-      role: "DevOps Engineer",
-      image: teamRaj
+      name: "Rohit Deshmukh",
+      role: "Team Lead",
+      image: teamPriya,
     },
     {
-      name: "Maya Singh",
-      role: "Audio Processing Expert",
-      image: teamMaya
-    }
+      name: "Ronit Jain",
+      role: "Team Member",
+      image: teamMaya,
+    },
   ];
 
   return (
@@ -56,7 +56,7 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <div key={index} className="group relative">
               <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-lg opacity-0 group-hover:opacity-20 transition-all duration-500 transform group-hover:scale-110" />
-              
+
               <Card className="relative bg-gradient-dark border border-border rounded-2xl overflow-hidden shadow-card hover:shadow-glow transition-all duration-500 transform hover:scale-105">
                 <div className="aspect-square overflow-hidden">
                   <img
@@ -65,15 +65,13 @@ const Team = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                
+
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-semibold mb-2 text-foreground">
                     {member.name}
                   </h3>
-                  <p className="text-primary font-medium">
-                    {member.role}
-                  </p>
-                  
+                  <p className="text-primary font-medium">{member.role}</p>
+
                   {/* Decorative element */}
                   <div className="mt-4 w-12 h-1 bg-gradient-primary rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
