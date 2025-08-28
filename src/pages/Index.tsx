@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ProjectFlow from "@/components/ProjectFlow";
 import Team from "@/components/Team";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -8,6 +9,7 @@ const Index = () => {
       <Hero />
       <ProjectFlow />
       <Team />
+      <Footer />
     </div>
   );
 };
